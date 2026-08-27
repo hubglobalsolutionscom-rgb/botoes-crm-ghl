@@ -1,10 +1,16 @@
-# Histórico de versões
+# Changelog
+
+## Unreleased
+
+- Added screenshots for the Open and Close states.
+- Translated all current public documentation and repository forms into English.
+- Added contribution links for Pix and USD payments.
 
 ## 1.3.0 — 2026-08-27
 
-- Torna independentes a atribuição do usuário e a inclusão da tag `open`.
-- Mantém uma ação concluída mesmo quando a outra não pode ser confirmada.
-- Suporta a janela atual de seleção de tags e o menu anterior.
-- Confirma a conversa ativa e o estado final antes de atualizar o botão.
-- Evita registrar nomes, e-mails e identificadores de usuários ou contatos no console.
-- Publicação inicial do projeto comunitário.
+- Made current-user assignment and the `open` tag operation independent.
+- Preserved a completed action when the other action could not be confirmed.
+- Added support for both the current tag-selection modal and the legacy menu.
+- Confirmed the active conversation and final state before updating the button.
+- Removed names, email addresses, and user or contact identifiers from console logs.
+- Published the initial community release.

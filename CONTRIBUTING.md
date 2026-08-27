@@ -1,13 +1,13 @@
-# Como contribuir
+# Contributing
 
-Obrigado por ajudar a melhorar os botões para o CRM do GHL.
+Thank you for helping improve the buttons for the GHL CRM.
 
-1. Faça um fork e crie uma branch para a alteração.
-2. Preserve a independência entre a atribuição de proprietário e a aplicação da tag `open`.
-3. Preserve as verificações da conversa ativa e a compatibilidade com as duas interfaces de Tags.
-4. Teste somente em uma subconta e em contatos para os quais você tenha autorização.
-5. Execute `npm test` e abra um Pull Request explicando o comportamento alterado.
+1. Fork the repository and create a branch for your change.
+2. Preserve the independence between owner assignment and the `open` tag operation.
+3. Preserve the active-conversation safeguards and compatibility with both tag interfaces.
+4. Test only in a subaccount and on contacts you are authorized to use.
+5. Run `npm test` and open a Pull Request explaining the changed behavior.
 
-Não inclua dados reais, capturas identificáveis, cookies, tokens, chaves, IDs internos ou URLs privadas. Não adicione coleta de credenciais, telemetria oculta ou endpoints privados.
+Do not include real data, identifiable screenshots, cookies, tokens, keys, internal IDs, or private URLs. Do not add credential collection, hidden telemetry, or private endpoints.
 
-Para vulnerabilidades, siga [SECURITY.md](SECURITY.md) e não use uma Issue pública.
+For vulnerabilities, follow [SECURITY.md](SECURITY.md) instead of opening a public Issue.

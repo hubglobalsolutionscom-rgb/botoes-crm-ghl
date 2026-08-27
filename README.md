@@ -1,76 +1,82 @@
-# Botões para o CRM do GHL
+# Buttons for the GHL CRM
 
-Projeto comunitário que adiciona um controle **Open / Close / Closed** ao cabeçalho de Conversations do CRM do GHL. Ele ajuda a assumir um atendimento e controlar seu estado usando o proprietário e as tags nativas do CRM.
+A community project that adds an **Open / Close / Closed** control to the Conversations header in the GHL CRM. It helps agents take ownership of a conversation and manage its state through the CRM's native owner and tag controls.
 
-> Projeto independente, sem vínculo oficial com o GHL.
+> This is an independent project with no official affiliation with GHL.
 
-## Como funciona
+## Preview
 
-O botão representa o estado confirmado pelas tags do contato:
+| Open | Close |
+| :---: | :---: |
+| ![Open button displayed in the GHL CRM conversation header](docs/images/ghl-crm-open-button.png) | ![Close button displayed in the GHL CRM conversation header](docs/images/ghl-crm-close-button.png) |
 
-- Sem `open` e sem `closed`: **Open**.
-- Com `open` e sem `closed`: **Close**.
-- Com `closed`: **Closed**, sem nova ação automática.
+## How it works
 
-Ao clicar em **Open**, o script tenta, de forma independente:
+The button reflects the state confirmed by the contact's tags:
 
-1. Atribuir a conversa ao usuário conectado.
-2. Adicionar a tag `open`.
+- No `open` or `closed` tag: **Open**.
+- `open` without `closed`: **Close**.
+- Any confirmed `closed` tag: **Closed**, with no further automated action.
 
-Se uma das ações falhar, a outra ainda pode ser concluída. O botão mostra um aviso e permite uma nova tentativa quando necessário.
+When you click **Open**, the script independently attempts to:
 
-Ao clicar em **Close**, o script adiciona a tag `closed` e preserva a tag `open`, as demais tags e o proprietário atual. Para segurança, o fechamento só é executado quando a tag `open` já está confirmada.
+1. Assign the conversation to the currently signed-in user.
+2. Add the `open` tag.
 
-O script reconhece tanto a janela atual de seleção de tags quanto a interface anterior em formato de menu. Ele também verifica a conversa ativa durante cada operação para reduzir o risco de alterar o contato errado em uma navegação interna do CRM.
+If one action fails, the other can still succeed. If the owner is assigned but the tag fails, the button remains **Open** and you can retry. If the tag succeeds but owner assignment fails, the button moves to **Close** and the owner may need to be corrected manually.
 
-## Requisitos
+When you click **Close**, the script adds the `closed` tag while preserving the `open` tag, all other tags, and the current owner. For safety, closing is attempted only when the `open` tag is already confirmed.
 
-- Crie, em cada subconta, as tags `open` e `closed`, exatamente em letras minúsculas.
-- Garanta que o usuário tenha permissão para alterar o proprietário e as tags.
-- Faça a primeira instalação e cada atualização em um contato de teste autorizado.
+The script supports both the current tag-selection modal and the legacy dropdown menu. It also revalidates the active conversation throughout each operation to reduce the risk of changing the wrong contact during in-app navigation.
 
-## Instalação
+## Requirements
 
-No campo de código personalizado da conta, adicione esta única linha:
+- Create the tags `open` and `closed` in every subaccount, using these exact lowercase names.
+- Make sure each user has permission to change the conversation owner and tags.
+- Test the initial installation and every update on an authorized test contact first.
+
+## Installation
+
+Add this single line to the account's custom code field:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/hubglobalsolutionscom-rgb/botoes-crm-ghl@main/ghl-conversation-control.js" async crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
-Use a linha somente uma vez. A referência `@main` acompanha as atualizações publicadas neste repositório após a renovação do cache da CDN.
+Add the line only once. The `@main` reference receives updates published to this repository after the CDN cache refreshes.
 
-Para controlar totalmente as atualizações, faça um fork e troque `hubglobalsolutionscom-rgb/botoes-crm-ghl` por `SEU-USUARIO/SEU-REPOSITORIO`. Para fixar uma versão específica, substitua `@main` por uma tag de versão, como `@v1.3.0`.
+For full control over updates, fork this repository and replace `hubglobalsolutionscom-rgb/botoes-crm-ghl` with `YOUR-USERNAME/YOUR-REPOSITORY`. To pin a specific version, replace `@main` with a release tag such as `@v1.3.0`.
 
-Se o campo aceitar somente JavaScript, use:
+If the field accepts JavaScript only, use:
 
 ```javascript
 (()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/gh/hubglobalsolutionscom-rgb/botoes-crm-ghl@main/ghl-conversation-control.js";s.async=true;s.crossOrigin="anonymous";s.referrerPolicy="no-referrer";document.head.appendChild(s)})();
 ```
 
-## Segurança e privacidade
+## Security and privacy
 
-- O código publicado não contém tokens, senhas, cookies, chaves de API, IDs de subcontas ou dados de contatos.
-- Não há telemetria, servidor próprio ou chamadas de rede no script. O navegador apenas baixa o arquivo da CDN, e o próprio CRM persiste as ações.
-- As alterações são feitas pela interface já aberta no navegador; o próprio CRM aplica e registra as ações usando a sessão e as permissões do usuário conectado.
-- Código personalizado executa com os privilégios da sessão aberta. Ao usar `@main`, você confia também nas atualizações futuras deste repositório; use um fork ou uma versão fixada se precisar de controle próprio.
-- Nunca coloque credenciais ou identificadores privados no código. Não publique capturas com dados reais em Issues ou Pull Requests.
-- Revise e teste cada atualização antes de utilizá-la em produção. A interface do CRM não é uma API pública estável e pode mudar.
+- The published source contains no tokens, passwords, cookies, API keys, subaccount IDs, or contact data.
+- The script has no project-owned telemetry, backend, or direct network API calls. The browser still downloads the file from the CDN, and the CRM's native interface persists the requested actions.
+- Changes are made through the interface already open in the browser, using the signed-in user's existing session and permissions.
+- Custom code runs with the privileges of the active session. Using `@main` also means trusting future repository updates; use your own fork or a pinned release if you need independent control.
+- Never add credentials or private identifiers to the source. Do not post screenshots containing real data in Issues or Pull Requests.
+- Review and test every update before production use. The CRM interface is not a stable public API and may change.
 
-Leia [SECURITY.md](SECURITY.md) antes de relatar uma possível vulnerabilidade.
+Read [SECURITY.md](SECURITY.md) before reporting a potential vulnerability.
 
-## Contribuindo
+## Contributing
 
-Melhorias são bem-vindas. Consulte [CONTRIBUTING.md](CONTRIBUTING.md), execute `npm test` e abra um Pull Request sem dados reais de contas ou contatos.
+Improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md), run `npm test`, and open a Pull Request without real account or contact data.
 
-## Apoie o projeto
+## Support the project
 
-Quem quiser ajudar na manutenção do projeto pode fazer uma contribuição simbólica de **R$ 18**.
+Anyone who would like to support project maintenance can make a symbolic contribution of **R$ 18** or donate in USD.
 
-- **Chave Pix:** em breve
-- **Pagamento em dólar:** link em breve
+- [Contribute R$ 18 with Pix](https://buy.stripe.com/5kQbJ1dm1eDLgAFcq504803)
+- [Donate in USD](https://donate.stripe.com/7sYdR91Dj9jr1FL9dT04802)
 
-A contribuição é opcional e não altera o acesso ao código.
+Contributions are optional and do not affect access to the source code.
 
-## Licença
+## License
 
-Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE).
+Distributed under the MIT License. See [LICENSE](LICENSE).
