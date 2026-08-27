@@ -1,11 +1,11 @@
-## Alteração
+## Change
 
-Descreva objetivamente o que mudou e por quê.
+Describe what changed and why.
 
-## Verificação
+## Verification
 
-- [ ] Executei `npm test`.
-- [ ] Testei apenas em uma subconta e em contatos autorizados.
-- [ ] Não incluí nomes, telefones, e-mails, mensagens, IDs, capturas identificáveis, tokens ou URLs privadas.
-- [ ] Mantive independentes a atribuição do usuário e a inclusão da tag `open`.
-- [ ] Considerei a janela atual de Tags e o menu anterior.
+- [ ] I ran `npm test`.
+- [ ] I tested only in a subaccount and on authorized contacts.
+- [ ] I included no names, phone numbers, email addresses, messages, IDs, identifiable screenshots, tokens, or private URLs.
+- [ ] I kept current-user assignment and the `open` tag operation independent.
+- [ ] I considered both the current tag-selection modal and the legacy menu.

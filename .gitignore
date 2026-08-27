@@ -13,3 +13,4 @@ node_modules/
 *.jpg
 *.jpeg
 *.webp
+!docs/images/*.png

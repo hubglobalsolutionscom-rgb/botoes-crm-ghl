@@ -1,22 +1,22 @@
-# Política de segurança
+# Security policy
 
-## Versões mantidas
+## Supported versions
 
-A linha `1.3.x` recebe correções de segurança. Versões anteriores não são mantidas.
+The `1.3.x` line receives security fixes. Earlier versions are not maintained.
 
-## Como relatar uma vulnerabilidade
+## Reporting a vulnerability
 
-Não abra uma Issue pública. Use **Security > Advisories > Report a vulnerability** neste repositório para enviar o relato de forma privada.
+Do not open a public Issue. Use **Security > Advisories > Report a vulnerability** in this repository to submit the report privately.
 
-Inclua uma descrição do impacto, os passos mínimos para reprodução e a versão afetada. Remova ou substitua qualquer dado real antes de enviar.
+Include an impact description, the minimum reproduction steps, and the affected version. Remove or replace all real data before submitting the report.
 
-Nunca compartilhe:
+Never share:
 
-- credenciais, cookies, tokens ou cabeçalhos de autenticação;
-- nomes, telefones, e-mails ou mensagens de contatos;
-- IDs de contatos, usuários ou subcontas;
-- capturas de tela sem anonimização completa.
+- credentials, cookies, tokens, or authentication headers;
+- contact names, phone numbers, email addresses, or messages;
+- contact, user, or subaccount IDs;
+- screenshots that have not been fully anonymized.
 
-São especialmente relevantes relatos sobre alteração do contato errado, captura ou envio indevido de dados, carregamento de código não autorizado e formas de contornar as permissões do CRM.
+Reports involving changes to the wrong contact, unauthorized data collection or transmission, unauthorized code loading, or permission bypasses are especially important.
 
-O recebimento será confirmado pelo canal privado. A correção e a divulgação serão coordenadas de acordo com a gravidade e a possibilidade de reprodução segura.
+Receipt will be confirmed through the private channel. Remediation and disclosure will be coordinated according to severity and the ability to reproduce the issue safely.
