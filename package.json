@@ -1,0 +1,17 @@
+{
+  "name": "botoes-crm-ghl",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Botões Open e Close para o CRM do GHL.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --check ghl-conversation-control.js && node scripts/validate-public.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hubglobalsolutionscom-rgb/botoes-crm-ghl.git"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

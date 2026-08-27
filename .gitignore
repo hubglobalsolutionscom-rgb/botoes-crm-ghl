@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
+.env
+.env.*
+!.env.example
+.dev.vars
+.wrangler/
+*.log
+*.png
+*.jpg
+*.jpeg
+*.webp
