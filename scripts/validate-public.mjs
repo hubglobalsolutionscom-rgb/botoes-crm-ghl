@@ -68,7 +68,7 @@ const source = await readFile(sourcePath, "utf8");
 const readme = await readFile(readmePath, "utf8");
 
 const requiredSourcePatterns = [
-  [/const VERSION = "1\.3\.0";/, "version 1.3.0"],
+  [/const VERSION = "1\.3\.1";/, "version 1.3.1"],
   [/open: "open"/, "open tag"],
   [/closed: "closed"/, "closed tag"],
   [/tagsModal:/, "current tag interface"],
