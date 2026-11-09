@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const VERSION = "1.3.0";
+  const VERSION = "1.3.1";
   const INSTANCE_KEY = "__hgConversationControlInstance";
 
   if (window[INSTANCE_KEY]?.destroy) {
@@ -52,8 +52,10 @@
     panelClose: "button#close-panel-button",
     panelOpenIcon: "#sidebar-contact-icon",
 
-    ownerTrigger: "button#owner-dropdown-trigger",
-    ownerLabel: "#owner-dropdown-trigger-label",
+    ownerTrigger:
+      'button#owner-dropdown-trigger, [data-pendo-id="contact-details-header-owner"]:not([role="presentation"])',
+    ownerLabel:
+      "#owner-dropdown-trigger-label, #hr-tag-ellipsis-owner-dropdown-trigger",
     ownerMenu:
       '#owner-dropdown-menu[role="menu"][data-hr-dropdown-trigger="owner-dropdown-trigger"]',
     ownerSearch:
